@@ -14,6 +14,7 @@ public class Project {
         this.id = UUID.randomUUID();
         this.name = name;
         this.creationDate = creationDate;
+        this.status = Status.NEW;
     }
 
     public void startProject(){

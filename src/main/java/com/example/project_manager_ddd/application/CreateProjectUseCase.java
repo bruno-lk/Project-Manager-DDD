@@ -2,8 +2,8 @@ package com.example.project_manager_ddd.application;
 
 import com.example.project_manager_ddd.UseCase;
 import com.example.project_manager_ddd.domain.Project;
-import com.example.project_manager_ddd.infrastructure.ProjectEntity;
-import com.example.project_manager_ddd.infrastructure.ProjectEntityRepository;
+import com.example.project_manager_ddd.infrastructure.repository.ProjectEntity;
+import com.example.project_manager_ddd.infrastructure.repository.ProjectEntityRepository;
 import org.springframework.util.Assert;
 
 import java.util.Date;

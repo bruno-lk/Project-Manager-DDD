@@ -1,4 +1,4 @@
-package com.example.project_manager_ddd.infrastructure;
+package com.example.project_manager_ddd.infrastructure.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

@@ -4,6 +4,8 @@ import com.example.project_manager_ddd.domain.Project;
 import com.example.project_manager_ddd.domain.ProjectRepository;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 public class ProjectRepositoryImpl implements ProjectRepository {
     private final ProjectEntityRepository projectEntityRepository;
@@ -22,5 +24,13 @@ public class ProjectRepositoryImpl implements ProjectRepository {
                 project.getStatus());
 
         projectEntityRepository.save(projectEntity);
+    }
+
+    @Override
+    public List<Project> listAll() {
+        return projectEntityRepository.findAll()
+                .stream()
+                .map(p -> p.mapToDomain(p))
+                .toList();
     }
 }

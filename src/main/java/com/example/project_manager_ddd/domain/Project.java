@@ -17,6 +17,14 @@ public class Project {
         this.status = Status.NEW;
     }
 
+    public Project(UUID id, Date creationDate, String name, Date conclusionDate, Status status) {
+        this.id = id;
+        this.creationDate = creationDate;
+        this.name = name;
+        this.conclusionDate = conclusionDate;
+        this.status = status;
+    }
+
     public void startProject(){
         this.status = Status.ACTIVE;
     }

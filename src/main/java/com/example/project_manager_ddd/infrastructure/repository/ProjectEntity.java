@@ -37,6 +37,15 @@ public class ProjectEntity {
                 project.getStatus());
     }
 
+    public Project mapToDomain(ProjectEntity entity){
+        return new Project(
+                entity.id,
+                entity.creationDate,
+                entity.name,
+                entity.conclusionDate,
+                entity.status);
+    }
+
     public UUID getId() {
         return id;
     }

@@ -2,18 +2,18 @@ package com.example.project_manager_ddd.application;
 
 import com.example.project_manager_ddd.UseCase;
 import com.example.project_manager_ddd.domain.Project;
+import com.example.project_manager_ddd.domain.ProjectRepository;
 import com.example.project_manager_ddd.infrastructure.repository.ProjectEntity;
-import com.example.project_manager_ddd.infrastructure.repository.ProjectEntityRepository;
 import org.springframework.util.Assert;
 
 import java.util.Date;
 
 @UseCase
 public class CreateProjectUseCase {
-    private final ProjectEntityRepository projectEntityRepository;
+    private final ProjectRepository projectRepository;
 
-    public CreateProjectUseCase(ProjectEntityRepository projectEntityRepository) {
-        this.projectEntityRepository = projectEntityRepository;
+    public CreateProjectUseCase(ProjectRepository projectRepository) {
+        this.projectRepository = projectRepository;
     }
 
     public void execute(String name) {
@@ -22,7 +22,6 @@ public class CreateProjectUseCase {
         Date currentDate = new Date();
         Project project = new Project(name, currentDate);
 
-        ProjectEntity projectEntity = new ProjectEntity().mapToEntity(project);
-        projectEntityRepository.save(projectEntity);
+        projectRepository.save(project);
     }
 }
